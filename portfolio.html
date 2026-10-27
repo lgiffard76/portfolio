@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio · Zone01 Rouen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cyan: #00e0ff;
+      --magenta: #ff2e93;
+      --orange: #ff7a1a;
+      --lime: #a3ff12;
+      --text-muted: #8b8fa3;
+      --bg: #07070a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1, h2, h3, .logo, .badge, .btn, .tab {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0, 224, 255, 0.18), transparent 42%),
+        radial-gradient(circle at 85% 25%, rgba(255, 46, 147, 0.15), transparent 42%),
+        radial-gradient(circle at 50% 100%, rgba(255, 122, 26, 0.13), transparent 50%),
+        var(--bg);
+      animation: glow 16s ease-in-out infinite alternate;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 3px 3px;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    @keyframes glow {
+      0%   { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2.5rem;
+      background: rgba(7, 7, 10, 0.55);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after { width: 100%; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 2rem;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 224, 255, 0.07);
+      border: 1px solid rgba(0, 224, 255, 0.28);
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--cyan);
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(8px);
+      animation: fadeUp 0.8s ease both;
+      box-shadow: 0 0 25px -8px rgba(0, 224, 255, 0.5);
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, var(--cyan) 0%, var(--magenta) 55%, var(--orange) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: shift 6s ease infinite;
+    }
+
+    @keyframes shift {
+      0%, 100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      color: #07070a;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 2.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 12px 30px -8px rgba(255, 46, 147, 0.6),
+                  0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    .btn i { transition: transform 0.25s ease; }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px -8px rgba(0, 224, 255, 0.7),
+                  0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+    }
+
+    .btn:hover i { transform: translateX(4px); }
+    .btn:active { transform: translateY(-1px) scale(0.99); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeUp 1s ease 0.6s both;
+    }
+
+    .scroll-hint i { animation: bounce 2s infinite; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(6px); }
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab:hover {
+      color: #fff;
+      border-color: rgba(0, 224, 255, 0.4);
+      background: rgba(0, 224, 255, 0.06);
+    }
+
+    .tab.active {
+      color: #07070a;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--cyan), var(--magenta));
+      box-shadow: 0 8px 25px -8px rgba(255, 46, 147, 0.7);
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 22px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1),
+                  border-color 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 224, 255, 0.1), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 224, 255, 0.35);
+      box-shadow: 0 25px 45px -22px rgba(0, 224, 255, 0.6);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: linear-gradient(135deg, rgba(0, 224, 255, 0.18), rgba(255, 46, 147, 0.18));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--cyan);
+    }
+
+    .card.zone01 .card-icon {
+      background: linear-gradient(135deg, rgba(255, 122, 26, 0.2), rgba(163, 255, 18, 0.15));
+      color: var(--orange);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      flex-grow: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .tags span {
+      background: rgba(0, 224, 255, 0.1);
+      border: 1px solid rgba(0, 224, 255, 0.25);
+      color: var(--cyan);
+      padding: 0.28rem 0.85rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .card.zone01 .tags span {
+      background: rgba(255, 122, 26, 0.1);
+      border-color: rgba(255, 122, 26, 0.3);
+      color: var(--orange);
+    }
+
+    .hidden { display: none !important; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer i {
+      background: linear-gradient(135deg, var(--magenta), var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.82rem; }
+      .section { padding: 3rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <i class="fas fa-bolt"></i> Portfolio
+    </div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#projets">Projets</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="accueil">
+    <div class="badge">
+      <i class="fas fa-bolt"></i> Portfolio · Zone01 Rouen
+    </div>
+    <h1>
+      Bienvenue sur <br>
+      <span class="gradient">mon Portfolio</span>
+    </h1>
+    <p>Découvrez mes projets</p>
+    <button class="btn" id="btn-acceder">
+      Accéder à mes projets <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="section hidden" id="projets">
+    <div class="section-header">
+      <h2><span class="gradient">Mes Projets</span></h2>
+      <p>Une sélection de mes créations personnelles et des projets réalisés à Zone01 Rouen.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-filter="all">
+        <i class="fas fa-layer-group"></i> Tous
+      </button>
+      <button class="tab" data-filter="perso">
+        <i class="fas fa-code"></i> Personnels
+      </button>
+      <button class="tab" data-filter="zone01">
+        <i class="fas fa-graduation-cap"></i> Zone01 Rouen
+      </button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <article class="card" data-category="perso">
+        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <h3>Portfolio interactif</h3>
+        <p>Un site web animé avec un design sombre moderne et des transitions fluides.</p>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>JS</span>
+        </div>
+      </article>
+
+      <article class="card zone01" data-category="zone01">
+        <div class="card-icon"><i class="fas fa-terminal"></i></div>
+        <h3>Projet Zone01 · 1</h3>
+        <p>Description rapide de ton premier projet réalisé à Zone01 Rouen.</p>
+        <div class="tags">
+          <span>Go</span><span>Shell</span>
+        </div>
+      </article>
+
+      <article class="card zone01" data-category="zone01">
+        <div class="card-icon"><i class="fas fa-cubes"></i></div>
+        <h3>Projet Zone01 · 2</h3>
+        <p>Description rapide de ton deuxième projet réalisé à Zone01 Rouen.</p>
+        <div class="tags">
+          <span>JS</span><span>DOM</span>
+        </div>
+      </article>
+
+      <article class="card zone01" data-category="zone01">
+        <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Projet Zone01 · 3</h3>
+        <p>Description rapide de ton troisième projet réalisé à Zone01 Rouen.</p>
+        <div class="tags">
+          <span>API</span><span>SQL</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2025 · Portfolio étudiant — Fait avec <i class="fas fa-bolt"></i> à Zone01 Rouen
+  </footer>
+
+  <script>
+    const btnAcceder = document.getElementById('btn-acceder');
+    const hero = document.getElementById('accueil');
+    const projets = document.getElementById('projets');
+
+    btnAcceder.addEventListener('click', () => {
+      projets.classList.remove('hidden');
+      projets.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => hero.classList.add('hidden'), 400);
+    });
+
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.style.display = match ? 'flex' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
