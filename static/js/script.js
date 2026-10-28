@@ -76,41 +76,6 @@ if (form) {
 }
 
 const projectDetails = {
-  nova: {
-    title: "NOVA",
-    summary:
-      "Application de recherche web développée en Rust, avec interface de recherche, collecte de contenus et organisation des résultats.",
-    tags: [
-      "Rust",
-      "Actix Web",
-      "Tera",
-      "SQLite",
-      "SQLx",
-      "Reqwest",
-      "Scraper",
-      "TF-IDF",
-      "SearXNG",
-    ],
-    tasks: [
-      "Mettre en place un serveur web avec Actix Web et des routes HTTP.",
-      "Créer les pages avec les templates Tera.",
-      "Charger et exploiter des données stockées dans SQLite avec SQLx.",
-      "Récupérer et analyser des pages web avec Reqwest et Scraper.",
-      "Travailler sur l’indexation et le classement de résultats avec TF-IDF.",
-      "Organiser l’interface de recherche et les catégories de résultats.",
-    ],
-    learning: [
-      "Structurer une application en Rust et comprendre le rôle de ses différents composants.",
-      "Créer un serveur web avec Actix Web et organiser les routes HTTP.",
-      "Utiliser les templates Tera pour construire les pages de l'interface web.",
-      "Connecter une application à SQLite avec SQLx et manipuler des données persistantes.",
-      "Effectuer des requêtes web avec Reqwest et extraire des informations HTML avec Scraper.",
-      "Découvrir le classement des résultats avec TF-IDF et le fonctionnement de SearXNG.",
-      "Faire communiquer plusieurs composants techniques dans une même application.",
-      "Analyser les erreurs, tester des corrections et améliorer progressivement une application."
-    ],
-    note: "Cette fiche reprend les éléments connus du projet NOVA. Ajuste chaque tâche selon les fonctions réellement finalisées dans ton dépôt.",
-  },
   forum: {
     title: "Forum",
     summary:
@@ -164,26 +129,6 @@ const projectDetails = {
       "Relier les données géographiques à une interface web lorsque cette fonctionnalité est implémentée.",
     ],
     note: "Vérifie la liste exacte des filtres et des fonctions de géolocalisation présentes dans ton dépôt avant publication.",
-  },
-  "atm-management-system": {
-    title: "ATM Management System",
-    summary:
-      "Projet en C autour d’un système de gestion de type distributeur automatique, avec fichiers et communication client-serveur.",
-    tags: ["C", "Fichiers", "Sockets", "Client-serveur"],
-    tasks: [
-      "Organiser le programme en C et traiter les entrées utilisateur.",
-      "Lire ou écrire des informations dans des fichiers pour les conserver.",
-      "Mettre en place la communication par sockets entre un client et un serveur.",
-      "Transmettre des requêtes et traiter les réponses entre les deux parties.",
-      "Gérer les erreurs de saisie et de communication selon l’implémentation.",
-    ],
-    learning: [
-      "Renforcer les bases du langage C et de la gestion mémoire.",
-      "Comprendre la persistance de données avec des fichiers.",
-      "Découvrir les sockets et le modèle client-serveur.",
-      "Structurer les échanges entre deux programmes et diagnostiquer les erreurs réseau.",
-    ],
-    note: "La fiche décrit les axes connus du projet. Complète les opérations bancaires précises selon les fonctionnalités effectivement réalisées.",
   },
   "push-swap": {
     title: "Push-swap",
@@ -256,21 +201,6 @@ const projectDetails = {
     ],
     note: "Fiche établie à partir du README.md, de main.go et de main_test.go du projet Go-Reloaded.",
   },
-  "tetris-optimizer": {
-    title: "Tetris Optimizer",
-    summary:
-      "Projet de formation dont les objectifs précis doivent être confirmés à partir du dépôt.",
-    tags: ["Zone01", "Algorithmes", "À confirmer"],
-    tasks: [
-      "Décrire ici l’objectif exact donné dans le sujet.",
-      "Lister les entrées, les contraintes et le résultat attendu.",
-      "Présenter l’algorithme réellement implémenté et les tests effectués.",
-    ],
-    learning: [
-      "À compléter à partir du code et du sujet : algorithmes, contraintes, tests ou optimisation selon le travail réel.",
-    ],
-    note: "Les informations disponibles ne suffisent pas à confirmer les tâches précises. Cette fiche est volontairement signalée comme à compléter.",
-  },
   "math-skills": {
     title: "Math-Skills",
     summary:
@@ -288,21 +218,6 @@ const projectDetails = {
       "Structurer le traitement de données numériques.",
     ],
     note: "À vérifier avec le sujet et le code source avant de publier cette description comme définitive.",
-  },
-  "gd-reloaded": {
-    title: "GD-Reloaded",
-    summary:
-      "Projet de formation à documenter à partir de son sujet et de son code source.",
-    tags: ["Zone01", "À confirmer"],
-    tasks: [
-      "Ajouter l’objectif précis du sujet.",
-      "Décrire les fonctionnalités implémentées et les fichiers principaux.",
-      "Lister les tests réalisés et les contraintes respectées.",
-    ],
-    learning: [
-      "À compléter après vérification du projet : les apprentissages doivent correspondre aux tâches réellement réalisées.",
-    ],
-    note: "Les informations actuelles ne permettent pas de confirmer le contenu exact de GD-Reloaded.",
   },
 };
 const detailRoot = document.querySelector("#project-detail-page");
