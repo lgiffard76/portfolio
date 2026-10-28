@@ -1,115 +1,38 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Coordonnées et formulaire de contact du portfolio."
-    />
-    <title>Contact | Portfolio développeur</title>
-    <link rel="stylesheet" href="static/css/style.css" />
-    <script src="static/js/script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="wrap header-inner">
-        <a class="brand" href="index.html"
-          ><span class="brand-mark">H.</span
-          ><span class="brand-name">PORTFOLIO <small>/ DEV</small></span></a
-        ><button
-          class="menu-toggle"
-          aria-label="Ouvrir le menu"
-          aria-expanded="false"
-        >
-          ☰ MENU
-        </button>
-        <nav class="nav" aria-label="Navigation principale">
-          <a href="index.html" class="">Accueil</a
-          ><a href="profil.html" class="">Profil</a
-          ><a href="competences.html" class="">Compétences</a
-          ><a href="projets.html" class="">Projets</a
-          ><a href="contact.html" class="active" aria-current="page">Contact</a>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <section class="wrap page-hero">
-        <p class="eyebrow">04 / Contact</p>
-        <h1>Parlons de <span>projets.</span></h1>
-        <p class="intro">
-          Pour échanger à propos de développement informatique, de projets
-          collaboratifs ou d’une opportunité professionnelle, tu peux utiliser
-          les coordonnées ci-dessous après les avoir personnalisées.
-        </p>
-      </section>
-      <section class="section">
-        <div class="wrap contact-grid">
-          <div>
-            <p class="eyebrow">Coordonnées</p>
-            <h2 class="section-title">Restons en <span>contact.</span></h2>
-            <p class="section-note">
-              Les champs ci-dessous sont des placeholders à remplacer avant la
-              mise en ligne. Ce portfolio reste séparé du CV.
-            </p>
-            <div class="contact-list" style="margin-top: 24px">
-              <div class="contact-item">
-                <span>Email</span><strong>heehicham2@gmail.com</strong>
-              </div>
-              <div class="contact-item">
-                <span>GitHub</span>
-                <strong>
-                  <a href="https://github.com/gghhhyhhh" target="_blank" rel="noopener noreferrer">
-                    https://github.com/gghhhyhhh
-                  </a>
-                </strong>
-              </div>
-              <div class="contact-item">
-                <span>Localisation</span><strong>Rouen, France</strong>
-              </div>
-            </div>
-          </div>
-          <div class="panel">
-            <h2>Envoyer un message</h2>
-            <form class="contact-form" data-contact-form>
-              <div class="field">
-                <label for="name">Nom</label
-                ><input id="name" name="name" autocomplete="name" required />
-              </div>
-              <div class="field">
-                <label for="email">Adresse e-mail</label
-                ><input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                />
-              </div>
-              <div class="field">
-                <label for="message">Message</label
-                ><textarea id="message" name="message" required></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">
-                Préparer le message ↗
-              </button>
-              <p class="form-note">
-                Ce formulaire ouvre le logiciel de messagerie de l’utilisateur.
-                Pour un envoi direct depuis le site, il faudra configurer un
-                service côté serveur.
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="wrap footer-inner">
-        <span
-          >© <span data-year>2026</span> <strong>PORTFOLIO / DEV</strong> ·
-          Portfolio indépendant du CV.</span
-        ><span>Conçu en HTML, CSS et JavaScript.</span>
-      </div>
-    </footer>
-  </body>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Coordonnées et formulaire de contact du portfolio." />
+<title>Contact | Portfolio développeur</title>
+<link rel="stylesheet" href="static/css/style.css" />
+<script src="static/js/script.js" defer></script>
+</head>
+<body>
+<aside class="side">
+<a class="brand" href="index.html"><span class="brand-mark">H.</span><span class="brand-name">Portfolio<small>développeur</small></span></a>
+<button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰ Menu</button>
+<nav class="nav" aria-label="Navigation principale"><a href="index.html" data-n="01">Accueil</a><a href="profil.html" data-n="02">Profil</a><a href="competences.html" data-n="03">Compétences</a><a href="projets.html" data-n="04">Projets</a><a href="contact.html" data-n="05" class="active" aria-current="page">Contact</a></nav>
+<div class="side-foot"><span>Rouen, France</span><a href="https://github.com/gghhhyhhh" target="_blank" rel="noopener noreferrer">github ↗</a></div>
+</aside>
+<main>
+<div class="page">
+<section class="head"><p class="kicker">Contact</p><h1>Parlons de <em>projets.</em></h1>
+<p class="lead">Pour échanger à propos de développement informatique, de projets collaboratifs ou d’une opportunité professionnelle.</p></section>
+<section class="section contact"><div><h2 class="title">Restons en <em>contact</em></h2>
+<div class="contact-list">
+<div class="contact-item"><span>Email</span><strong>heehicham2@gmail.com</strong></div>
+<div class="contact-item"><span>GitHub</span><strong><a href="https://github.com/gghhhyhhh" target="_blank" rel="noopener noreferrer">https://github.com/gghhhyhhh</a></strong></div>
+<div class="contact-item"><span>Localisation</span><strong>Rouen, France</strong></div></div></div>
+<div class="box"><h2 class="title" style="margin-bottom:16px">Envoyer un message</h2>
+<form class="contact-form" data-contact-form>
+<div class="field"><label for="name">Nom</label><input id="name" name="name" autocomplete="name" required /></div>
+<div class="field"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+<div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+<button class="btn btn-primary" type="submit">Préparer le message →</button>
+<p class="form-note">Ce formulaire ouvre le logiciel de messagerie de l’utilisateur. Pour un envoi direct depuis le site, il faudra configurer un service côté serveur.</p>
+</form></div></section></div>
+</main>
+<footer class="site-footer"><div class="page footer-inner"><span>© <span data-year>2026</span> <strong>Portfolio / dev</strong> · Indépendant du CV.</span><span>HTML, CSS et JavaScript.</span></div></footer>
+</body>
 </html>
