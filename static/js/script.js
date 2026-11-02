@@ -107,7 +107,6 @@ const projectDetails = {
       "Relier les formulaires HTML au traitement côté serveur.",
       "Déboguer des erreurs de routes, de base de données et de configuration SMTP.",
     ],
-    note: "Les fonctionnalités liées aux e-mails dépendent de la configuration SMTP. Présente comme terminées uniquement celles qui fonctionnent dans ta version finale.",
   },
   "groupie-tracker": {
     title: "Groupie Tracker",
@@ -128,7 +127,6 @@ const projectDetails = {
       "Créer une interface de recherche et de filtrage.",
       "Relier les données géographiques à une interface web lorsque cette fonctionnalité est implémentée.",
     ],
-    note: "Vérifie la liste exacte des filtres et des fonctions de géolocalisation présentes dans ton dépôt avant publication.",
   },
   "push-swap": {
     title: "Push-swap",
@@ -148,7 +146,6 @@ const projectDetails = {
       "Améliorer un algorithme en tenant compte du nombre d’opérations.",
       "Écrire un parseur et tester les cas limites.",
     ],
-    note: "Confirme le langage de la version que tu présentes : ton projet a été travaillé en C puis également en Go.",
   },
   "ascii-art": {
     title: "ASCII-Art / ASCII-Art-Web",
@@ -168,7 +165,6 @@ const projectDetails = {
       "Comprendre le traitement d’un formulaire HTTP.",
       "Relier la logique métier à des templates HTML.",
     ],
-    note: "Les tâches distinguent les versions terminal et web. Garde seulement celles qui correspondent à la version que tu présentes.",
   },
   "go-reloaded": {
     title: "Go-Reloaded",
@@ -199,7 +195,6 @@ const projectDetails = {
       "Traiter la ponctuation et les cas particuliers du formatage de texte.",
       "Écrire des tests automatisés pour comparer les résultats attendus aux résultats obtenus.",
     ],
-    note: "Fiche établie à partir du README.md, de main.go et de main_test.go du projet Go-Reloaded.",
   },
   "math-skills": {
     title: "Math-Skills",
@@ -217,7 +212,6 @@ const projectDetails = {
       "Vérifier la précision et la cohérence des résultats.",
       "Structurer le traitement de données numériques.",
     ],
-    note: "À vérifier avec le sujet et le code source avant de publier cette description comme définitive.",
   },
 };
 const detailRoot = document.querySelector("#project-detail-page");
@@ -251,6 +245,5 @@ if (detailRoot) {
     };
     fillList("#project-tasks", project.tasks);
     fillList("#project-learning", project.learning);
-    document.querySelector("#project-note").textContent = project.note;
   }
 }
