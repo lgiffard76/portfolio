@@ -71,7 +71,7 @@ if (form) {
         data.get("message"),
     );
     window.location.href =
-      "mailto:heehicham2@gmail.com?subject=" + subject + "&body=" + body;
+      "mailto:lgiffard76@gmail.com?subject=" + subject + "&body=" + body;
   });
 }
 
